@@ -33,11 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-      - name: syncfile
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-         server: wh-nb3if1wq7i6udh1xtsb.my3w.com
-         username: ${{ secrets.FTPUSERNAME }}
-         password: ${{ secrets.FTPPASSWORD }}
-         local-dir:  ./out/
-         server-dir: htdocs/
