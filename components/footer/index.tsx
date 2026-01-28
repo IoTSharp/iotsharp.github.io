@@ -56,12 +56,12 @@ const Footer: FC<IFooterProps> = ({}) => {
           "links": {
             "data": [
               {
-                "label": "Demo",
-                "link": "http://demo.iotsharp.net/"
+                "label": "演示",
+                "link": "http://iotsharp.online/"
               },
               {
-                "label": "Docs",
-                "link": "https://docs.iotsharp.io/",
+                "label": "文档",
+                "link": "https://iotsharp.gitee.io/",
               },
             ]
           }
@@ -89,8 +89,8 @@ const Footer: FC<IFooterProps> = ({}) => {
                 "label": "QQ",
                 "link": "https://jq.qq.com/?_wv=1027&k=u1ZzTmVd"
               }, {
-                "label": "微博",
-                "link": "https://weibo.com/iotsharp"
+                "label": "企微",
+                "link": "https://iotsharp.gitee.io/img/qyqun.jpg"
               }, {
                 "label": "Discord",
                 "link": "https://discord.com/invite/My6PaTmUvu"
