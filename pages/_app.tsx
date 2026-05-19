@@ -20,10 +20,9 @@ const MyApp = (data: AppProps & ILayoutProps & IComponentProps): JSX.Element => 
   return (
     <div>
       <Head>
-        <title>IoTSharp官网</title>
-        <meta name="description" content={`IoTSharp官网(${isMobile ? '移动端' : 'pc端'})`}/>
-        <meta name="viewport" content="user-scalable=no"/>
-        <meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+        <title>IoTSharp 开源产品矩阵</title>
+        <meta name="description" content="IoTSharp 开源产品门面，介绍 IoTSharp、IoTCoWork、IoTEdge、IoTEmBASIC、协议 SDK 和开发者工具。"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       <LanguageContextProvider>

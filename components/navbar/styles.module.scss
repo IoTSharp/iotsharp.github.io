@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--navbar-background-color);
+  background-color: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(0.5rem);
-  border-bottom: 1px solid var(--semi-color-border);
+  border-bottom: 1px solid #e7e3f7;
   width: 100%;
   height: 4rem;
   position: sticky;
@@ -16,7 +16,7 @@
 
   .icon {
     cursor: pointer;
-    margin-left: 1.8rem;
+    margin-left: 1.3rem;
   }
 
   a {
@@ -25,6 +25,23 @@
 
     img:nth-of-type(1) {
       margin-right: 10px;
+    }
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    color: #5c5570;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    a {
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #512bd4;
+      }
     }
   }
 
@@ -58,6 +75,29 @@
       background-size: 1.25rem 1.25rem;
       background-repeat: no-repeat;
       cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 47.9375rem) {
+  .navBar {
+    height: auto;
+    min-height: 4rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.8rem 1.25rem;
+
+    .links {
+      order: 3;
+      width: 100%;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+      white-space: nowrap;
+    }
+
+    .icon {
+      margin-left: 1rem;
     }
   }
 }

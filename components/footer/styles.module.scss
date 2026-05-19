@@ -1,157 +1,115 @@
 @import "../../pages/media.scss";
 
 .footer {
-  font-size: 1rem;
-  padding: 4.375rem 9.0625rem;
-  background-color: var(--footer-background-color);
+  padding: 4.5rem 8rem 3rem;
+  color: #ffffff;
+  background-color: #32145a;
+}
+
+.topArea {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.2fr);
+  gap: 4rem;
+}
+
+.footerTitle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  img:nth-of-type(1) {
+    margin-right: 10px;
+  }
+}
+
+.summary {
+  max-width: 24rem;
+  margin: 1.4rem 0 0;
+  color: #f2eaff;
+  font-size: 0.98rem;
+  line-height: 1.7rem;
+}
+
+.linkListArea {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.linkArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #50e6ff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.3rem;
+
+  a {
+    color: #ffffff;
+    font-size: 0.92rem;
+    line-height: 1.3rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #50e6ff;
+    }
+  }
+}
+
+.bottomArea {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  color: #f2eaff;
+  font-size: 0.88rem;
+
+  a {
+    color: inherit;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #50e6ff;
+    }
+  }
+}
+
+@include media-ipad {
+  .footer {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
 
   .topArea {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+  }
+}
 
-    .footerTitle {
-      margin: 0;
-      display: flex;
+@include media-mobile {
+  .footer {
+    padding: 3.5rem 1.25rem 2.5rem;
+  }
 
-      img:nth-of-type(1) {
-        margin-right: 10px;
-      }
-    }
-
-    .linkListArea {
-      display: flex;
-      .linkArea {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10rem;
-
-        .title {
-          font-weight: 500;
-          font-size: 0.875rem;
-          line-height: 1.25rem;
-          color: #ffffff;
-          margin-bottom: 2.5rem;
-          word-break: keep-all;
-        }
-
-        .links {
-          display: flex;
-          flex-direction: column;
-          font-weight: 400;
-          font-size: 0.875rem;
-          line-height: 1.25rem;
-          word-break: keep-all;
-
-          .link {
-            color: #ffffff;
-            cursor: pointer;
-            margin-bottom: 1.5rem;
-          }
-
-          .disabled {
-            color: var(--secondary-color);
-            cursor: not-allowed;
-            margin-bottom: 1.5rem;
-          }
-        }
-      }
-
-      .linkArea:first-of-type {
-        margin-left: 0;
-      }
-    }
+  .topArea,
+  .linkListArea {
+    grid-template-columns: 1fr;
   }
 
   .bottomArea {
-    display: flex;
-    justify-content: space-between;
-    .codeArea {
-      display: flex;
-      flex-direction: column;
-      .text {
-        color: var(--secondary-color);
-      }
-    }
-    .numArea {
-      color: var(--secondary-color);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      font-weight: 400;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-
-      span {
-        margin-bottom: 0.75rem;
-      }
-
-      .publicLogo {
-        display: flex;
-        cursor: pointer;
-        .logo {
-          margin-right: 0.25rem;
-        }
-      }
-    }
+    flex-direction: column;
   }
 }
-
-@media screen and (min-width: 48.6875rem) and (max-width: 54.125rem) {
-  .footer {
-    .topArea {
-      .footerTitle {
-        margin-bottom: 1.25rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 48.6875rem) {
-  .footer {
-    .topArea {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .footerTitle {
-        margin-bottom: 2.5rem;
-      }
-
-      .linkListArea {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-
-        .linkArea {
-          margin-left: 0;
-        }
-      }
-    }
-
-    .bottomArea {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .codeArea {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .text {
-          text-align: center;
-          margin: 1.25rem 0;
-        }
-      }
-
-      .numArea {
-        align-items: center;
-        text-align: center;
-      }
-    }
-  }
-}
-
-// @include media-ipad {
-// }

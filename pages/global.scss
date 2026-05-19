@@ -1,13 +1,13 @@
 @import "~@douyinfe/semi-ui/dist/css/semi.min.css";
 
 html[data-theme="dark"] {
-  --primary-color: #ffffff;
-  --yellow-color: #ffd100;
-  --primary-background-color: rgba(14, 14, 14, 1);
-  --footer-background-color: rgba(36, 36, 36, 1);
-  --navbar-background-color: rgba(0, 0, 0, 0.5);
-  --secondary-color: rgba(255, 255, 255, 0.5);
-  --link-color: #34a8eb;
+  --primary-color: #20133a;
+  --yellow-color: #50e6ff;
+  --primary-background-color: #ffffff;
+  --footer-background-color: #32145a;
+  --navbar-background-color: rgba(255, 255, 255, 0.92);
+  --secondary-color: #5c5570;
+  --link-color: #512bd4;
   --semi-page-active-color: rgb(84, 169, 255);
   --semi-page-active-background-color: rgba(84, 169, 255, 0.2);
   --semi-page-hover-background-color: rgb(23, 23, 23);
@@ -24,14 +24,14 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="light"] {
-  --primary-color: #333333;
-  --yellow-color: #ffd100;
+  --primary-color: #20133a;
+  --yellow-color: #50e6ff;
   --box-shadow: rgba(0, 0, 0, 0.2);
   --primary-background-color: rgba(255, 255, 255, 1);
-  --footer-background-color: rgba(36, 36, 36, 1);
-  --navbar-background-color: rgba(255, 255, 255, 0.5);
-  --secondary-color: #666666;
-  --link-color: #0070f3;
+  --footer-background-color: #32145a;
+  --navbar-background-color: rgba(255, 255, 255, 0.92);
+  --secondary-color: #5c5570;
+  --link-color: #512bd4;
   --semi-page-active-color: #333333;
   --semi-page-active-background-color: rgb(234, 245, 255);
   --semi-page-hover-background-color: rgb(244, 245, 245);
