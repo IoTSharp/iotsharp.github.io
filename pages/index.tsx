@@ -53,9 +53,9 @@ const projectGroups = [
       {
         name: "IoTEmbedded",
         role: "嵌入式 BASIC/C 运行时",
-        description: "当前上游仓库名为 IoTEmBASIC，覆盖 STM32、RTOS、bare-metal 和低资源 Linux。",
-        page: "https://iotsharp.net/IoTEmBASIC/",
-        repo: "https://github.com/IoTSharp/IoTEmBASIC"
+        description: "覆盖 STM32、RTOS、bare-metal 和低资源 Linux 的嵌入式 BASIC/C 运行时。",
+        page: "https://iotsharp.net/IoTEmbedded/",
+        repo: "https://github.com/IoTSharp/IoTEmbedded"
       },
       {
         name: "Pixiu",
@@ -159,7 +159,7 @@ const repositoryCatalog = [
   },
   {
     title: "边缘与嵌入式",
-    repositories: ["IoTEdge", "Pixiu", "IoTEmBASIC", "IoTCoreAppUpdates", "IoTSharp.Edge.RT-Thread", "IoTSharp.Edge.nanoFramework", "IoTSharp.Edge.paho.mqtt.c", "iotsharp-rtthread-package", "stm32-it-sdk", "STM32F407VET6", "W601_IoT_Board", "ADT74XX", "PANDORA"]
+    repositories: ["IoTEdge", "IoTEmbedded", "Pixiu", "IoTCoreAppUpdates", "IoTSharp.Edge.RT-Thread", "IoTSharp.Edge.nanoFramework", "IoTSharp.Edge.paho.mqtt.c", "iotsharp-rtthread-package", "stm32-it-sdk", "STM32F407VET6", "W601_IoT_Board", "ADT74XX", "PANDORA"]
   },
   {
     title: "协议、通信与 SDK",
