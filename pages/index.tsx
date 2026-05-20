@@ -41,7 +41,7 @@ const projectGroups = [
   },
   {
     title: "边缘与嵌入式",
-    description: "从 C# AOT、Linux C 到 STM32 / RT-Thread 的边缘运行时和示例。",
+    description: "从 C# AOT 网关到 STM32、RTOS、bare-metal 和低资源 Linux 的边缘运行时和示例。",
     projects: [
       {
         name: "IoTEdge",
@@ -51,18 +51,18 @@ const projectGroups = [
         repo: "https://github.com/IoTSharp/IoTEdge"
       },
       {
-        name: "IoTEdge.Linux",
-        role: "Linux C 边缘基座",
-        description: "上游仓库名为 Pixiu，提供 Linux C 边缘计算、控制板和跨发行版构建基础。",
-        page: "https://iotsharp.net/Pixiu/",
-        repo: "https://github.com/IoTSharp/Pixiu"
-      },
-      {
-        name: "IoTEdge.Stm32",
-        role: "MCU BASIC 解释器内核",
-        description: "上游仓库名为 IoTEmBASIC，面向 STM32 和低资源设备的 BASIC 解释器生态。",
+        name: "IoTEmbedded",
+        role: "嵌入式 BASIC/C 运行时",
+        description: "当前上游仓库名为 IoTEmBASIC，覆盖 STM32、RTOS、bare-metal 和低资源 Linux。",
         page: "https://iotsharp.net/IoTEmBASIC/",
         repo: "https://github.com/IoTSharp/IoTEmBASIC"
+      },
+      {
+        name: "Pixiu",
+        role: "历史 Linux C 基座",
+        description: "IoTEdge.Linux 的历史实现，作为 IoTEmbedded 低资源 Linux 能力的迁移来源保留。",
+        page: "https://iotsharp.net/Pixiu/",
+        repo: "https://github.com/IoTSharp/Pixiu"
       },
       {
         name: "IoTSharp.Edge.RT-Thread",
@@ -146,7 +146,7 @@ const projectGroups = [
 const capabilities = [
   "设备注册、配置、命令、固件和生命周期管理",
   "遥测、属性、事件、告警和规则链处理",
-  "C# AOT、Linux C、STM32 / BASIC 三类边缘目标",
+  "IoTEdge C# AOT 与 IoTEmbedded 嵌入式 BASIC/C 目标",
   "工业协议、嵌入式 SDK、数据库连接器和工具链",
   "Blazor Hybrid 工作台、AI 对话组件和可视化编辑体验",
   "文档、示例、GitHub Pages 和社区协作入口"
@@ -189,7 +189,7 @@ const Home: NextPage = () => {
             <p className={styles.eyebrow}>iotsharp.net · Open Source Home</p>
             <h1>IoTSharp 开源产品矩阵</h1>
             <p className={styles.heroText}>
-              这里是 IoTSharp 组织的开源门面：从物联网主平台、IoTCoWork 工作台、三类 IoTEdge 边缘目标，到协议 SDK、嵌入式工具和开发者组件。
+              这里是 IoTSharp 组织的开源门面：从物联网主平台、IoTCoWork 工作台、IoTEdge 与 IoTEmbedded 边缘产品线，到协议 SDK、嵌入式工具和开发者组件。
             </p>
             <div className={styles.actions}>
               <a href="#projects" className={styles.primaryAction}>浏览开源项目</a>
@@ -210,8 +210,8 @@ const Home: NextPage = () => {
             </div>
             <div>
               <span>Edge</span>
-              <strong>IoTEdge · Linux · STM32</strong>
-              <small>C# AOT / Linux C / BASIC</small>
+              <strong>IoTEdge · IoTEmbedded</strong>
+              <small>C# AOT / Embedded BASIC+C</small>
             </div>
           </div>
         </section>
