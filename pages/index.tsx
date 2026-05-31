@@ -58,13 +58,6 @@ const projectGroups = [
         repo: "https://github.com/IoTSharp/IoTEmbedded"
       },
       {
-        name: "Pixiu",
-        role: "历史 Linux C 基座",
-        description: "IoTEdge.Linux 的历史实现，作为 IoTEmbedded 低资源 Linux 能力的迁移来源保留。",
-        page: "https://iotsharp.net/Pixiu/",
-        repo: "https://github.com/IoTSharp/Pixiu"
-      },
-      {
         name: "IoTSharp.Edge.RT-Thread",
         role: "RT-Thread 接入示例",
         description: "基于 RT-Thread IoT Board 的 IoTSharp 对接协议实现与设备侧示例。",
@@ -159,7 +152,7 @@ const repositoryCatalog = [
   },
   {
     title: "边缘与嵌入式",
-    repositories: ["IoTEdge", "IoTEmbedded", "Pixiu", "IoTCoreAppUpdates", "IoTSharp.Edge.RT-Thread", "IoTSharp.Edge.nanoFramework", "IoTSharp.Edge.paho.mqtt.c", "iotsharp-rtthread-package", "stm32-it-sdk", "STM32F407VET6", "W601_IoT_Board", "ADT74XX", "PANDORA"]
+    repositories: ["IoTEdge", "IoTEmbedded", "IoTCoreAppUpdates", "IoTSharp.Edge.RT-Thread", "IoTSharp.Edge.nanoFramework", "IoTSharp.Edge.paho.mqtt.c", "iotsharp-rtthread-package", "stm32-it-sdk", "STM32F407VET6", "W601_IoT_Board", "ADT74XX", "PANDORA"]
   },
   {
     title: "协议、通信与 SDK",
