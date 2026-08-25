@@ -1,5 +1,4 @@
 import {FC} from "react";
-import {Col, Row} from '@douyinfe/semi-ui';
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import PlatformIcon from "@/public/platform.svg";
@@ -23,20 +22,20 @@ const Features: FC<IFeaturesProps> = ({}) => {
   return (
     <div className={styles.featuresContainer}>
       <div className={styles.list}>
-        <Row>
+        <div className={styles.grid}>
           {
             Options?.map((option, index) => {
               return (
-                <Col xs={24} sm={24} md={8} lg={8} xl={8} key={index}>
+                <div key={index}>
                   <div className={styles.item}>
                     <Image src={option?.icon} alt="" width={90} height={90}/>
                     <div className={styles.title}>{option?.title}</div>
                   </div>
-                </Col>
+                </div>
               )
             })
           }
-        </Row>
+        </div>
       </div>
     </div>
   );

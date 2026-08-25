@@ -187,7 +187,7 @@ const Home: NextPage = () => {
             <div className={styles.actions}>
               <a href="#projects" className={styles.primaryAction}>浏览开源项目</a>
               <a href="https://github.com/IoTSharp" className={styles.secondaryAction} target="_blank" rel="noreferrer">GitHub 组织</a>
-              <a href="https://iotsharp.online" className={styles.secondaryAction} target="_blank" rel="noreferrer">商业服务</a>
+              <a href="https://iotsharp.net/console" className={styles.secondaryAction}>平台控制台</a>
             </div>
           </div>
           <div className={styles.heroPanel} aria-label="IoTSharp open source map">
@@ -280,12 +280,12 @@ const Home: NextPage = () => {
         <section id="open-commercial" className={styles.boundary}>
           <div>
             <p className={styles.eyebrow}>Open Source + Commercial</p>
-            <h2>iotsharp.net 介绍开源生态，iotsharp.online 承载商业服务</h2>
+            <h2>一个域名连接开源生态、文档、AI 与商业平台</h2>
           </div>
           <p>
-            开源项目聚焦设备接入、边缘运行时、协议 SDK、数据处理和开发工具。商业客户需要的 Copilot 在线服务、生成工件托管、用量计量、企业 License、镜像授权、私有化交付和支持服务由 IoTSharp Online 提供。
+            开源项目、产品文档和行业内容从 iotsharp.net 统一进入；平台控制台、AI 服务、演示环境与商业交付分别通过 /console、/ai、/demo 和企业服务流程承载。
           </p>
-          <a href="https://iotsharp.online" target="_blank" rel="noreferrer">访问 iotsharp.online</a>
+          <a href="https://iotsharp.net/console">进入平台控制台</a>
         </section>
       </main>
       <Footer/>

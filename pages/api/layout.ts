@@ -35,11 +35,11 @@ const getLayoutData = (req: NextApiRequest, res: NextApiResponse<ILayoutProps>):
             "data": [
               {
                 "label": "Demo",
-                "link": "http://demo.iotsharp.net/"
+                "link": "https://iotsharp.net/demo/"
               },
               {
                 "label": "Docs",
-                "link": "https://docs.iotsharp.net/",
+                "link": "https://iotsharp.net/docs/",
               },
             ]
           }

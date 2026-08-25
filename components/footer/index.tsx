@@ -20,8 +20,9 @@ const linkGroups = [
     title: "开发者入口",
     links: [
       {label: "GitHub", link: "https://github.com/IoTSharp"},
-      {label: "文档", link: "https://docs.iotsharp.net/"},
-      {label: "商业服务", link: "https://iotsharp.online"},
+      {label: "文档", link: "https://iotsharp.net/docs/"},
+      {label: "AI 服务", link: "https://iotsharp.net/ai"},
+      {label: "平台控制台", link: "https://iotsharp.net/console"},
       {label: "组织主页", link: "https://iotsharp.net"}
     ]
   },

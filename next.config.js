@@ -1,9 +1,8 @@
 const path = require("path");
 
-const semi = require("@douyinfe/semi-next").default({});
-module.exports = semi({
+module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
+  output: "export",
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -12,7 +11,7 @@ module.exports = semi({
     return config;
   },
   images: {
-    domains: ["127.0.0.1"],
+    remotePatterns: [{ protocol: "http", hostname: "127.0.0.1" }],
     unoptimized: true
   },
-});
+};

@@ -1,19 +1,18 @@
-import {FC, useContext} from "react";
+import {FC, useState} from "react";
 import Image from "next/image";
-import {Carousel} from '@douyinfe/semi-ui';
+import {ChevronLeft, ChevronRight} from 'lucide-react';
 import TenantImage from '@/public/img_9.png';
 import RuleImage from '@/public/img_6.png';
 import ResourceImage from '@/public/img_8.png';
 import DeviceImage from '@/public/img_5.png';
 import ProductImage from '@/public/img_7.png';
 import styles from "./styles.module.scss";
-import {ThemeContext} from "@/stores/theme";
 
 export interface IPlatformProps {
 }
 
 const Platform: FC<IPlatformProps> = ({}) => {
-  const {theme} = useContext(ThemeContext);
+  const [activeIndex, setActiveIndex] = useState(0);
   const Options = [{
     image: TenantImage,
     background: 'rgb(230, 232, 234)',
@@ -41,35 +40,29 @@ const Platform: FC<IPlatformProps> = ({}) => {
       background: 'rgb(203, 231, 254)',
       description: '为设备或者网关提供简洁有效的数据模板、字典、认证、素材组织能力。'
     }]
-  const style = {
-    width: '100%',
-    height: '916px',
-  };
+  const active = Options[activeIndex];
   return (
     <div className={styles.platformContainer}>
       <p className={styles.title}>打造现代 Web 应用</p>
       <p className={styles.subTitle}>与现代操作系统、浏览器更贴近的设计语言</p>
-      <Carousel showIndicator={false} style={style} speed={1000} animation='fade' theme='dark'>
-        {
-          Options.map((option, index) => {
-            return (
-              <div key={index}>
-                <div className={styles.imgWrapper} style={{backgroundColor: option.background}}>
-                  <Image src={option.image as unknown as string} unoptimized={true}
-                         priority={true}
-                         layout="fill"
-                         quality={100}
-                         alt="" />
-                </div>
-                <div className={styles.imgInfo}>
-                  <div className={styles.logo}>{option.title}</div>
-                  <div className={styles.imgInfoText}>{option.description}</div>
-                </div>
-              </div>
-            );
-          })
-        }
-      </Carousel>
+      <div className={styles.carousel} aria-live="polite">
+        <div className={styles.imgWrapper} style={{backgroundColor: active.background}}>
+          <Image src={active.image} unoptimized priority fill sizes="(max-width: 768px) 100vw, 80vw" alt=""/>
+        </div>
+        <div className={styles.imgInfo}>
+          <div className={styles.logo}>{active.title}</div>
+          <div className={styles.imgInfoText}>{active.description}</div>
+        </div>
+        <div className={styles.carouselControls}>
+          <button type="button" aria-label="上一项" onClick={() => setActiveIndex((activeIndex - 1 + Options.length) % Options.length)}>
+            <ChevronLeft size={24}/>
+          </button>
+          <span>{activeIndex + 1} / {Options.length}</span>
+          <button type="button" aria-label="下一项" onClick={() => setActiveIndex((activeIndex + 1) % Options.length)}>
+            <ChevronRight size={24}/>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

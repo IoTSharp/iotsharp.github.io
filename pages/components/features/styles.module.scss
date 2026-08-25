@@ -49,4 +49,16 @@
       }
     }
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 47.9375rem) {
+  .featuresContainer {
+    padding: 2rem 1.25rem;
+    .grid { grid-template-columns: 1fr; }
+  }
 }

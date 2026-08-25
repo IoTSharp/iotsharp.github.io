@@ -29,6 +29,12 @@
     }
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
   .item {
     height: 31.25rem;
     color: #fdfeff;
@@ -79,4 +85,12 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+}
+
+@media screen and (max-width: 75rem) {
+  .technologyContainer .grid { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 47.9375rem) {
+  .technologyContainer { padding: 4rem 1.25rem 2rem; }
 }

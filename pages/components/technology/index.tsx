@@ -1,5 +1,4 @@
 import {FC} from "react";
-import {Col, Row} from '@douyinfe/semi-ui';
 import cNames from 'classnames';
 import styles from "./styles.module.scss";
 
@@ -26,22 +25,22 @@ const Technology: FC<ITechnologyProps> = ({}) => {
         <h2>技术方向</h2>
         <div className={styles.line}/>
       </div>
-      <Row gutter={40}>
+      <div className={styles.grid}>
         {
           Options?.map((option, index) => {
             return (
-              <Col lg={24} xl={8} xs={24} sm={24} md={24} key={index}>
+              <div key={index}>
                 <div className={cNames(option?.classGroup)}>
                   <div className={styles.title}>{option?.title}</div>
                   <div className={styles.description}>
                     {option?.description}
                   </div>
                 </div>
-              </Col>
+              </div>
             )
           })
         }
-      </Row>
+      </div>
     </div>
   );
 };
