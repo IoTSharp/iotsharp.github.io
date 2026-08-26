@@ -11,7 +11,7 @@
   color: #512bd4;
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -19,15 +19,24 @@
 .hero {
   position: relative;
   display: grid;
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100svh - 7rem);
   grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 0.75fr);
   gap: 4rem;
   align-items: center;
-  padding: 7rem 8rem 6rem;
+  padding: 5.5rem 8rem 5rem;
   color: #ffffff;
-  background:
-    radial-gradient(circle at 78% 20%, rgba(80, 230, 255, 0.28), transparent 28%),
-    linear-gradient(115deg, #32145a 0%, #512bd4 58%, #764abc 100%);
+  background-color: #32145a;
+  background-image: url("/banner_dark.png");
+  background-position: center;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 15, 69, 0.9);
+    pointer-events: none;
+  }
 
   &:after {
     content: "";
@@ -50,7 +59,7 @@
   h1 {
     max-width: 52rem;
     margin: 1.4rem 0 0;
-    font-size: clamp(3rem, 7vw, 6.2rem);
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1.02;
   }
@@ -71,6 +80,29 @@
   margin-top: 2.5rem;
 }
 
+.utilityLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.4rem;
+  margin-top: 1.25rem;
+
+  a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 650;
+    line-height: 1.8;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: #50e6ff;
+      color: #50e6ff;
+      outline: none;
+    }
+  }
+}
+
 .primaryAction,
 .secondaryAction {
   display: inline-flex;
@@ -86,6 +118,11 @@
   &:hover {
     transform: translateY(-2px);
   }
+}
+
+.actionIcon {
+  flex: 0 0 auto;
+  margin-right: 0.45rem;
 }
 
 .primaryAction {
@@ -123,7 +160,7 @@
     color: #50e6ff;
     font-size: 0.76rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 
@@ -159,7 +196,7 @@
   h2 {
     margin: 1rem 0 0;
     color: #20133a;
-    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.12;
   }
@@ -371,7 +408,7 @@
 
   h2 {
     margin: 1rem 0 0;
-    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-size: 2.7rem;
     line-height: 1.12;
   }
 
@@ -424,8 +461,17 @@
     grid-template-columns: 1fr;
   }
 
+  .heroContent h1 {
+    font-size: 3.75rem;
+  }
+
+  .sectionIntro h2,
+  .boundary h2 {
+    font-size: 2.5rem;
+  }
+
   .heroPanel {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .capabilityGrid,
@@ -452,8 +498,18 @@
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    padding-top: 5rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .heroContent h1 {
+    font-size: 2.65rem;
+    line-height: 1.08;
+  }
+
+  .sectionIntro h2,
+  .boundary h2 {
+    font-size: 2rem;
   }
 
   .heroText {
@@ -461,19 +517,17 @@
     line-height: 1.75rem;
   }
 
-  .actions {
-    flex-direction: column;
-  }
-
   .primaryAction,
   .secondaryAction {
     width: 100%;
   }
 
+  .utilityLinks {
+    gap: 0.55rem 1rem;
+  }
+
   .heroPanel {
-    div {
-      padding-left: 1rem;
-    }
+    display: none;
   }
 
   .capabilities,

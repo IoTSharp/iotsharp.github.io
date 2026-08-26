@@ -13,11 +13,12 @@ export interface INavBarProps {
 
 const navLinks = [
   {label: "IoTSharp", href: "https://iotsharp.net/IoTSharp/"},
+  {label: "SonnetDB", href: "https://www.sonnetdb.com/"},
   {label: "IoTCoWork", href: "https://iotsharp.net/IoTCoWork/"},
   {label: "IoTEdge", href: "https://iotsharp.net/IoTEdge/"},
   {label: "IoTEmBASIC", href: "https://iotsharp.net/IoTEmBASIC/"},
   {label: "更多项目", href: "#projects"},
-  {label: "商业服务", href: "https://iotsharp.net/console"}
+  {label: "组合商业服务", href: "https://iotsharp.net/console"}
 ];
 
 const NavBar: FC<INavBarProps> = ({}) => {
@@ -28,7 +29,7 @@ const NavBar: FC<INavBarProps> = ({}) => {
   const iconTheme = theme === Themes.light ? <Moon size={24}/> : <Sun size={24}/>;
   return (
     <div className={styles.navBar}>
-      <a href="https://iotsharp.net/">
+      <a href="https://iotsharp.net/" aria-label="IoTSharp 首页">
         <Image src={logoIcon} alt="" width={35} height={35}/>
         <Image src={icon} alt="" width={135} height={40}/>
       </a>

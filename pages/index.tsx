@@ -3,6 +3,7 @@ import type {NextPage} from "next";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import styles from "./index.module.scss";
+import {ArrowUpRight} from "lucide-react";
 
 const projectGroups = [
   {
@@ -27,7 +28,7 @@ const projectGroups = [
         name: "SonnetDB",
         role: "C# 时序数据库",
         description: "面向高频遥测、指标写入、SQL 查询和边缘部署的 .NET 10 时序数据库。",
-        page: "https://sonnetdb.com/",
+        page: "https://www.sonnetdb.com/",
         repo: "https://github.com/IoTSharp/SonnetDB"
       },
       {
@@ -182,12 +183,22 @@ const Home: NextPage = () => {
             <p className={styles.eyebrow}>iotsharp.net · Open Source Home</p>
             <h1>IoTSharp 开源产品矩阵</h1>
             <p className={styles.heroText}>
-              这里是 IoTSharp 组织的开源门面：从物联网主平台、IoTCoWork 工作台、IoTEdge 与 IoTEmbedded 边缘产品线，到协议 SDK、嵌入式工具和开发者组件。
+              这里是 IoTSharp 产品组合的开源门面：以 IoTSharp 物联网平台连接现场，以 SonnetDB 承载时序与智能数据，再延伸到边缘、协议 SDK 和开发者工具。
             </p>
             <div className={styles.actions}>
-              <a href="#projects" className={styles.primaryAction}>浏览开源项目</a>
-              <a href="https://github.com/IoTSharp" className={styles.secondaryAction} target="_blank" rel="noreferrer">GitHub 组织</a>
-              <a href="https://iotsharp.net/console" className={styles.secondaryAction}>平台控制台</a>
+              <a href="https://iotsharp.online/" className={styles.primaryAction} target="_blank" rel="noreferrer">
+                <ArrowUpRight size={17} aria-hidden="true" className={styles.actionIcon}/>
+                IoTSharp 在线演示
+              </a>
+              <a href="https://www.sonnetdb.com/" className={styles.secondaryAction} target="_blank" rel="noreferrer">
+                <ArrowUpRight size={17} aria-hidden="true" className={styles.actionIcon}/>
+                SonnetDB 产品
+              </a>
+            </div>
+            <div className={styles.utilityLinks}>
+              <a href="#projects">浏览开源项目</a>
+              <a href="https://github.com/IoTSharp" target="_blank" rel="noreferrer">GitHub 组织</a>
+              <a href="https://iotsharp.net/console">组合商业服务</a>
             </div>
           </div>
           <div className={styles.heroPanel} aria-label="IoTSharp open source map">
@@ -205,6 +216,11 @@ const Home: NextPage = () => {
               <span>Edge</span>
               <strong>IoTEdge · IoTEmbedded</strong>
               <small>C# AOT / Embedded BASIC+C</small>
+            </div>
+            <div>
+              <span>Data platform</span>
+              <strong>SonnetDB</strong>
+              <small>时序 / 向量 / 全文 / 对象数据</small>
             </div>
           </div>
         </section>
@@ -283,9 +299,9 @@ const Home: NextPage = () => {
             <h2>一个域名连接开源生态、文档、AI 与商业平台</h2>
           </div>
           <p>
-            开源项目、产品文档和行业内容从 iotsharp.net 统一进入；平台控制台、AI 服务、演示环境与商业交付分别通过 /console、/ai、/demo 和企业服务流程承载。
+            开源项目、产品文档和行业内容从 iotsharp.net 统一进入；IoTSharp 与 SonnetDB 的演示、平台控制台、AI 服务和企业交付分别通过独立入口承载。
           </p>
-          <a href="https://iotsharp.net/console">进入平台控制台</a>
+          <a href="https://iotsharp.net/console">进入组合商业服务</a>
         </section>
       </main>
       <Footer/>

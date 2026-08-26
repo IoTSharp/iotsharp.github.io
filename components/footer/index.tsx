@@ -11,6 +11,7 @@ const linkGroups = [
     title: "核心项目",
     links: [
       {label: "IoTSharp", link: "https://iotsharp.net/IoTSharp/"},
+      {label: "SonnetDB", link: "https://www.sonnetdb.com/"},
       {label: "IoTCoWork", link: "https://iotsharp.net/IoTCoWork/"},
       {label: "IoTEdge", link: "https://iotsharp.net/IoTEdge/"},
       {label: "IoTEmBASIC", link: "https://iotsharp.net/IoTEmBASIC/"}
@@ -22,6 +23,7 @@ const linkGroups = [
       {label: "GitHub", link: "https://github.com/IoTSharp"},
       {label: "文档", link: "https://iotsharp.net/docs/"},
       {label: "AI 服务", link: "https://iotsharp.net/ai"},
+      {label: "IoTSharp 在线演示", link: "https://iotsharp.online/"},
       {label: "平台控制台", link: "https://iotsharp.net/console"},
       {label: "组织主页", link: "https://iotsharp.net"}
     ]
