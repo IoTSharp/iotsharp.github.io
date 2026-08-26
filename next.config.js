@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   reactStrictMode: true,
   output: "export",
+  trailingSlash: true,
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,

@@ -10,11 +10,11 @@ const linkGroups = [
   {
     title: "核心项目",
     links: [
-      {label: "IoTSharp", link: "https://iotsharp.net/IoTSharp/"},
-      {label: "SonnetDB", link: "https://www.sonnetdb.com/"},
-      {label: "IoTCoWork", link: "https://iotsharp.net/IoTCoWork/"},
-      {label: "IoTEdge", link: "https://iotsharp.net/IoTEdge/"},
-      {label: "IoTEmBASIC", link: "https://iotsharp.net/IoTEmBASIC/"}
+      {label: "IoTSharp", link: "/IoTSharp/"},
+      {label: "SonnetDB", link: "/SonnetDB/"},
+      {label: "IoTCoWork", link: "/IoTCoWork/"},
+      {label: "IoTEdge", link: "/IoTEdge/"},
+      {label: "IoTEmBASIC", link: "/IoTEmBASIC/"}
     ]
   },
   {
@@ -24,8 +24,8 @@ const linkGroups = [
       {label: "文档", link: "https://iotsharp.net/docs/"},
       {label: "AI 服务", link: "https://iotsharp.net/ai"},
       {label: "IoTSharp 在线演示", link: "https://iotsharp.online/"},
-      {label: "平台控制台", link: "https://iotsharp.net/console"},
-      {label: "组织主页", link: "https://iotsharp.net"}
+      {label: "企业服务", link: "https://iotsharp.net/console"},
+      {label: "更多项目", link: "/projects/"}
     ]
   },
   {
@@ -60,7 +60,12 @@ const Footer: FC<IFooterProps> = ({}) => {
               <span className={styles.title}>{group.title}</span>
               <div className={styles.links}>
                 {group.links.map((item) => (
-                  <a href={item.link} target="_blank" rel="noreferrer" key={item.link}>
+                  <a
+                    href={item.link}
+                    target={item.link.startsWith("http") ? "_blank" : undefined}
+                    rel={item.link.startsWith("http") ? "noreferrer" : undefined}
+                    key={item.link}
+                  >
                     {item.label}
                   </a>
                 ))}

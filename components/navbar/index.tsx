@@ -12,13 +12,14 @@ export interface INavBarProps {
 }
 
 const navLinks = [
-  {label: "IoTSharp", href: "https://iotsharp.net/IoTSharp/"},
-  {label: "SonnetDB", href: "https://www.sonnetdb.com/"},
-  {label: "IoTCoWork", href: "https://iotsharp.net/IoTCoWork/"},
-  {label: "IoTEdge", href: "https://iotsharp.net/IoTEdge/"},
-  {label: "IoTEmBASIC", href: "https://iotsharp.net/IoTEmBASIC/"},
-  {label: "更多项目", href: "#projects"},
-  {label: "组合商业服务", href: "https://iotsharp.net/console"}
+  {label: "首页", href: "/"},
+  {label: "IoTSharp", href: "/IoTSharp/"},
+  {label: "SonnetDB", href: "/SonnetDB/"},
+  {label: "IoTCoWork", href: "/IoTCoWork/"},
+  {label: "IoTEdge", href: "/IoTEdge/"},
+  {label: "IoTEmBASIC", href: "/IoTEmBASIC/"},
+  {label: "更多项目", href: "/projects/"},
+  {label: "企业服务", href: "https://iotsharp.net/console"}
 ];
 
 const NavBar: FC<INavBarProps> = ({}) => {

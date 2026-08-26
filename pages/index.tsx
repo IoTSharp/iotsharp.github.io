@@ -1,176 +1,16 @@
 import React from "react";
 import type {NextPage} from "next";
+import {ArrowRight, ArrowUpRight, Database, Gauge, Radio, Workflow} from "lucide-react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import {featuredProducts} from "@/data/products";
 import styles from "./index.module.scss";
-import {ArrowUpRight} from "lucide-react";
-
-const projectGroups = [
-  {
-    title: "核心平台",
-    description: "设备接入、数据处理、AI 辅助和本地协作的主路径。",
-    projects: [
-      {
-        name: "IoTSharp",
-        role: "开源物联网主平台",
-        description: "设备注册、心跳、配置、命令、固件、遥测、属性、事件、告警、规则引擎和开放 API。",
-        page: "https://iotsharp.net/IoTSharp/",
-        repo: "https://github.com/IoTSharp/IoTSharp"
-      },
-      {
-        name: "IoTCoWork",
-        role: "Blazor Hybrid 本地工作台",
-        description: "面向工程建模、调试、Copilot 协作、脚本设计和产物生成的本地开发工作台。",
-        page: "https://iotsharp.net/IoTCoWork/",
-        repo: "https://github.com/IoTSharp/IoTCoWork"
-      },
-      {
-        name: "SonnetDB",
-        role: "C# 时序数据库",
-        description: "面向高频遥测、指标写入、SQL 查询和边缘部署的 .NET 10 时序数据库。",
-        page: "https://www.sonnetdb.com/",
-        repo: "https://github.com/IoTSharp/SonnetDB"
-      },
-      {
-        name: "DotVector",
-        role: ".NET 原生向量数据库",
-        description: "单目录持久化、进程内运行、零外部依赖，也支持 gRPC 服务器模式与 Docker 部署。",
-        page: "https://iotsharp.net/DotVector/",
-        repo: "https://github.com/IoTSharp/DotVector"
-      }
-    ]
-  },
-  {
-    title: "边缘与嵌入式",
-    description: "从 C# AOT 网关到 STM32、RTOS、bare-metal 和低资源 Linux 的边缘运行时和示例。",
-    projects: [
-      {
-        name: "IoTEdge",
-        role: "C# AOT 边缘基座",
-        description: "工业 IoT 连接网关、采集循环、上报通道和 BasicRuntime C# 宿主。",
-        page: "https://iotsharp.net/IoTEdge/",
-        repo: "https://github.com/IoTSharp/IoTEdge"
-      },
-      {
-        name: "IoTEmbedded",
-        role: "嵌入式 BASIC/C 运行时",
-        description: "覆盖 STM32、RTOS、bare-metal 和低资源 Linux 的嵌入式 BASIC/C 运行时。",
-        page: "https://iotsharp.net/IoTEmbedded/",
-        repo: "https://github.com/IoTSharp/IoTEmbedded"
-      },
-      {
-        name: "IoTSharp.Edge.RT-Thread",
-        role: "RT-Thread 接入示例",
-        description: "基于 RT-Thread IoT Board 的 IoTSharp 对接协议实现与设备侧示例。",
-        page: "https://iotsharp.net/IoTSharp.Edge.RT-Thread/",
-        repo: "https://github.com/IoTSharp/IoTSharp.Edge.RT-Thread"
-      }
-    ]
-  },
-  {
-    title: "协议、SDK 与驱动",
-    description: "工业协议、嵌入式通信、数据库连接器和设备端 SDK。",
-    projects: [
-      {
-        name: "IoTClient",
-        role: "工业通信协议客户端",
-        description: "面向 PLC、Modbus、BACnet 等常见工业通信读取和测试场景。",
-        page: "https://iotsharp.net/IoTClient/",
-        repo: "https://github.com/IoTSharp/IoTClient"
-      },
-      {
-        name: "Modbus",
-        role: ".NET Modbus 协议实现",
-        description: "基于 .NET Standard 的 Modbus 通信协议实现，服务网关和采集场景。",
-        page: "https://iotsharp.net/Modbus/",
-        repo: "https://github.com/IoTSharp/Modbus"
-      },
-      {
-        name: "TaosConnector",
-        role: "TDengine ADO.NET 连接器",
-        description: "为 TDengine 提供 ADO.NET、ORM、Stmt 等 .NET 生态接入能力。",
-        page: "https://iotsharp.net/TaosConnector/",
-        repo: "https://github.com/IoTSharp/TaosConnector"
-      },
-      {
-        name: "IoTSharp.Sdks.*",
-        role: "多语言设备 SDK",
-        description: "覆盖 CoAP、Java、Lua、MQTT-C 等设备端接入示例和 SDK。",
-        page: "https://iotsharp.net/IoTSharp.Sdks.Java/",
-        repo: "https://github.com/IoTSharp/IoTSharp.Sdks.Java"
-      }
-    ]
-  },
-  {
-    title: "开发者工具与 UI",
-    description: "围绕 .NET、Blazor、LVGL、MQTT 和运维体验的工具生态。",
-    projects: [
-      {
-        name: "AntDesignXBlazor",
-        role: "Ant Design X for Blazor",
-        description: "面向 AI 对话、工作台和内容生成类产品的 Blazor 组件实现。",
-        page: "https://x.blazor.design/",
-        repo: "https://github.com/IoTSharp/AntDesignXBlazor"
-      },
-      {
-        name: "LVGLSharp",
-        role: "WinForms 到 LVGL 的兼容层",
-        description: "让 Visual Studio WinForms 设计器产出的界面在嵌入式 Linux 上一致运行。",
-        page: "https://lvglsharp.net/",
-        repo: "https://github.com/IoTSharp/LVGLSharp"
-      },
-      {
-        name: "lvgl-editor",
-        role: "LVGL 可视化编辑器",
-        description: "拖拽设计、事件绑定、逻辑编排和 C 代码生成，服务嵌入式 GUI 开发。",
-        page: "https://iotsharp.net/lvgl-editor/",
-        repo: "https://github.com/IoTSharp/lvgl-editor"
-      },
-      {
-        name: "MQTT.Chat",
-        role: "开源分布式 MQTT Broker",
-        description: "面向 IoT 场景的可扩展、高可用 MQTT 消息代理项目。",
-        page: "https://mqtt.chat/",
-        repo: "https://github.com/IoTSharp/MQTT.Chat"
-      }
-    ]
-  }
-];
 
 const capabilities = [
-  "设备注册、配置、命令、固件和生命周期管理",
-  "遥测、属性、事件、告警和规则链处理",
-  "IoTEdge C# AOT 与 IoTEmbedded 嵌入式 BASIC/C 目标",
-  "工业协议、嵌入式 SDK、数据库连接器和工具链",
-  "Blazor Hybrid 工作台、AI 对话组件和可视化编辑体验",
-  "文档、示例、GitHub Pages 和社区协作入口"
-];
-
-const repositoryCatalog = [
-  {
-    title: "主平台与数据",
-    repositories: ["IoTSharp", "IoTCoWork", "SonnetDB", "DotVector", "DotSearch", "FreeSql", "TaosConnector", "PinusDB.Data", "EFCore.Cassandra", "EntityFrameworkCore", "IoTSharp.EntityFrameworkCore.MongoDB"]
-  },
-  {
-    title: "边缘与嵌入式",
-    repositories: ["IoTEdge", "IoTEmbedded", "IoTCoreAppUpdates", "IoTSharp.Edge.RT-Thread", "IoTSharp.Edge.nanoFramework", "IoTSharp.Edge.paho.mqtt.c", "iotsharp-rtthread-package", "stm32-it-sdk", "STM32F407VET6", "W601_IoT_Board", "ADT74XX", "PANDORA"]
-  },
-  {
-    title: "协议、通信与 SDK",
-    repositories: ["IoTClient", "Modbus", "ModbusTool", "OpcUaHelper", "LibUA", "CoAP.NET", "IoTSharp.Sdks.CoAP", "IoTSharp.Sdks.Java", "IoTSharp.Sdks.Lua", "IoTSharp.Sdks.MQTT-C", "MQTTSdk", "mqttclient", "MQTT.Chat", "MQTTnet.AspNetCore.Routing", "NetCoreMQTTExampleCluster"]
-  },
-  {
-    title: "开发框架与 UI",
-    repositories: ["AntDesignXBlazor", "LVGLSharp", "lvgl-editor", "MewUI", "NativeWebHost", "Client", "MobileClient", "WeChatMiniApp", "ngFlowchart", "easy-flow", "SilkierQuartz", "AspNetCore.HealthChecks", "CAP.Extensions"]
-  },
-  {
-    title: "工具、库与镜像项目",
-    repositories: ["args", "Cocona", "GitLoom", "Extensions.Configuration.GitRepository", "IoTSharp.Numerics", "IoTSharp.X509Extensions", "jsonDB", "RuleEngine", "libedssharp", "FlatSharp", "HTML-Renderer", "PDFsharp", "tinylog", "parson", "Savitar"]
-  },
-  {
-    title: "社区、资料与实验",
-    repositories: ["awesome-mqtt", "awesome-raspberry-pi-zh", "canfestival", "tdengine-action", "VLPR", "stable-diffusion.cpp", "whisper.cpp", "DynamicExpresso", "Cyotek.Windows.Forms.ImageBox", "git-credential-manager", ".github", "iotsharp.github.io"]
-  }
+  {icon: Radio, title: "连接现场", text: "从 HTTP、MQTT、CoAP 到工业协议，把设备接入统一的数据路径。"},
+  {icon: Gauge, title: "理解数据", text: "以遥测、属性、事件、告警和规则链组织真实世界的变化。"},
+  {icon: Database, title: "靠近业务", text: "用 SonnetDB 承载时序与多模型数据，支持边缘与云端协作。"},
+  {icon: Workflow, title: "持续交付", text: "从 IoTCoWork 建模，到 IoTEdge 和 IoTEmBASIC 现场运行。"}
 ];
 
 const Home: NextPage = () => {
@@ -180,128 +20,124 @@ const Home: NextPage = () => {
       <main className={styles.home}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>iotsharp.net · Open Source Home</p>
-            <h1>IoTSharp 开源产品矩阵</h1>
+            <p className={styles.eyebrow}>iotsharp.net · 产品总览</p>
+            <h1>让工业数据从现场流动起来。</h1>
             <p className={styles.heroText}>
-              这里是 IoTSharp 产品组合的开源门面：以 IoTSharp 物联网平台连接现场，以 SonnetDB 承载时序与智能数据，再延伸到边缘、协议 SDK 和开发者工具。
+              IoTSharp 是一个面向工业现场的开源产品组合：平台负责连接与治理，SonnetDB 负责数据，工作台与边缘运行时负责把工程真正交付到设备旁。
             </p>
             <div className={styles.actions}>
-              <a href="https://iotsharp.online/" className={styles.primaryAction} target="_blank" rel="noreferrer">
-                <ArrowUpRight size={17} aria-hidden="true" className={styles.actionIcon}/>
-                IoTSharp 在线演示
+              <a href="#products" className={styles.primaryAction}>
+                浏览产品矩阵
+                <ArrowRight size={17} aria-hidden="true"/>
               </a>
-              <a href="https://www.sonnetdb.com/" className={styles.secondaryAction} target="_blank" rel="noreferrer">
-                <ArrowUpRight size={17} aria-hidden="true" className={styles.actionIcon}/>
-                SonnetDB 产品
+              <a href="https://iotsharp.online/" className={styles.secondaryAction} target="_blank" rel="noreferrer">
+                在线演示
+                <ArrowUpRight size={17} aria-hidden="true"/>
               </a>
             </div>
             <div className={styles.utilityLinks}>
-              <a href="#projects">浏览开源项目</a>
+              <a href="/projects/">更多项目</a>
+              <a href="https://iotsharp.net/console">企业服务</a>
               <a href="https://github.com/IoTSharp" target="_blank" rel="noreferrer">GitHub 组织</a>
-              <a href="https://iotsharp.net/console">组合商业服务</a>
             </div>
           </div>
-          <div className={styles.heroPanel} aria-label="IoTSharp open source map">
-            <div>
-              <span>Cloud</span>
+          <div className={styles.heroPanel} aria-label="IoTSharp 产品路径">
+            <div className={styles.panelRail}/>
+            <div className={styles.panelItem}>
+              <span>01 / Connect</span>
               <strong>IoTSharp</strong>
-              <small>设备接入 / 遥测 / 规则 / API</small>
+              <small>设备接入 · 遥测 · 规则</small>
             </div>
-            <div>
-              <span>Workbench</span>
+            <div className={styles.panelItem}>
+              <span>02 / Build</span>
               <strong>IoTCoWork</strong>
-              <small>本地建模 / Copilot / 生成发布</small>
+              <small>本地建模 · 调试 · 生成</small>
             </div>
-            <div>
-              <span>Edge</span>
-              <strong>IoTEdge · IoTEmbedded</strong>
-              <small>C# AOT / Embedded BASIC+C</small>
+            <div className={styles.panelItem}>
+              <span>03 / Run</span>
+              <strong>IoTEdge</strong>
+              <small>C# AOT · 边缘采集 · 离线运行</small>
             </div>
-            <div>
-              <span>Data platform</span>
+            <div className={styles.panelItem}>
+              <span>04 / Store</span>
               <strong>SonnetDB</strong>
-              <small>时序 / 向量 / 全文 / 对象数据</small>
+              <small>时序 · 向量 · 全文 · 对象</small>
             </div>
           </div>
         </section>
 
-        <section id="capabilities" className={styles.capabilities}>
+        <section id="products" className={styles.products}>
           <div className={styles.sectionIntro}>
-            <p className={styles.eyebrow}>Capabilities</p>
-            <h2>开源项目覆盖从设备到工具链的完整路径</h2>
+            <div>
+              <p className={styles.eyebrow}>Product map</p>
+              <h2>一条从设备到应用的开源路径</h2>
+            </div>
+            <p>每个产品都可以独立使用，也可以组合成一套可交付的工业数据基础设施。</p>
+          </div>
+          <div className={styles.productGrid}>
+            {featuredProducts.map((product, index) => (
+              <article className={`${styles.productCard} ${index === 0 ? styles.productCardFeatured : ""}`} key={product.slug}>
+                <div className={styles.productMeta}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{product.category}</span>
+                </div>
+                <h3>{product.name}</h3>
+                <p className={styles.productRole}>{product.role}</p>
+                <p className={styles.productSummary}>{product.summary}</p>
+                <div className={styles.tagList}>
+                  {product.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <a className={styles.cardLink} href={`/${product.slug}/`}>
+                  查看产品介绍
+                  <ArrowRight size={16} aria-hidden="true"/>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.capabilities}>
+          <div className={styles.sectionIntro}>
+            <div>
+              <p className={styles.eyebrow}>How it fits</p>
+              <h2>把复杂的现场工作拆成清晰的四步</h2>
+            </div>
+            <p>从连接到交付，每一层都有明确的职责边界，团队可以按实际项目选择需要的组合。</p>
           </div>
           <div className={styles.capabilityGrid}>
-            {capabilities.map((item, index) => (
-              <div className={styles.capabilityItem} key={item}>
-                <span>{(index + 1).toString().padStart(2, "0")}</span>
-                <p>{item}</p>
+            {capabilities.map(({icon: Icon, title, text}, index) => (
+              <div className={styles.capabilityItem} key={title}>
+                <div className={styles.capabilityIndex}>{String(index + 1).padStart(2, "0")}</div>
+                <Icon size={22} strokeWidth={1.8} aria-hidden="true"/>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="projects" className={styles.projects}>
-          <div className={styles.sectionIntro}>
-            <p className={styles.eyebrow}>Projects</p>
-            <h2>所有主要开源仓库和内容入口</h2>
-            <p>
-              导航优先进入对应项目的 GitHub Pages；当项目页面尚未发布时，仍保留目标 Pages 路径，并提供 GitHub 仓库入口。
-            </p>
+        <section className={styles.exploreBand}>
+          <div>
+            <p className={styles.eyebrow}>Open source network</p>
+            <h2>从主要产品继续进入所有开源仓库和内容入口。</h2>
           </div>
-
-          {projectGroups.map((group) => (
-            <div className={styles.projectGroup} key={group.title}>
-              <div className={styles.groupHeading}>
-                <h3>{group.title}</h3>
-                <p>{group.description}</p>
-              </div>
-              <div className={styles.projectGrid}>
-                {group.projects.map((project) => (
-                  <article className={styles.projectItem} key={project.name}>
-                    <p className={styles.projectRole}>{project.role}</p>
-                    <h4>{project.name}</h4>
-                    <p>{project.description}</p>
-                    <div className={styles.projectLinks}>
-                      <a href={project.page} target="_blank" rel="noreferrer">Pages</a>
-                      <a href={project.repo} target="_blank" rel="noreferrer">GitHub</a>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          <div className={styles.repositoryCatalog}>
-            <div className={styles.groupHeading}>
-              <h3>更多开源仓库</h3>
-              <p>按仓库名进入约定的 GitHub Pages 路径；如果某个仓库尚未发布 Pages，可从页面路径继续进入 GitHub 仓库。</p>
-            </div>
-            <div className={styles.repositoryGroups}>
-              {repositoryCatalog.map((group) => (
-                <section className={styles.repositoryGroup} key={group.title}>
-                  <h4>{group.title}</h4>
-                  <div className={styles.repositoryLinks}>
-                    {group.repositories.map((repo) => (
-                      <a href={`https://iotsharp.net/${repo}/`} target="_blank" rel="noreferrer" key={repo}>
-                        {repo}
-                      </a>
-                    ))}
-                  </div>
-                </section>
-              ))}
-            </div>
-          </div>
+          <p>协议、SDK、UI 工具、嵌入式示例和社区资料统一收录在“更多项目”中，按标签快速跳转。</p>
+          <a href="/projects/">
+            打开更多项目
+            <ArrowRight size={17} aria-hidden="true"/>
+          </a>
         </section>
 
-        <section id="open-commercial" className={styles.boundary}>
+        <section className={styles.enterpriseBand}>
           <div>
-            <p className={styles.eyebrow}>Open Source + Commercial</p>
-            <h2>一个域名连接开源生态、文档、AI 与商业平台</h2>
+            <p className={styles.eyebrow}>IoTSharp Enterprise</p>
+            <h2>需要落地到真实产线？</h2>
           </div>
-          <p>
-            开源项目、产品文档和行业内容从 iotsharp.net 统一进入；IoTSharp 与 SonnetDB 的演示、平台控制台、AI 服务和企业交付分别通过独立入口承载。
-          </p>
-          <a href="https://iotsharp.net/console">进入组合商业服务</a>
+          <p>企业服务提供部署、行业包、支持和交付协作，让开源能力进入你的现场节奏。</p>
+          <a href="https://iotsharp.net/console">
+            了解企业服务
+            <ArrowRight size={17} aria-hidden="true"/>
+          </a>
         </section>
       </main>
       <Footer/>

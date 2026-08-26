@@ -1,0 +1,414 @@
+@import "./media.scss";
+
+.page {
+  color: var(--fluent-ink);
+  background: var(--fluent-canvas);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--fluent-teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.intro,
+.productLinks,
+.catalog,
+.repositoryCatalog {
+  padding: 6.5rem 9vw;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.42fr);
+  gap: 4rem;
+  align-items: end;
+  color: var(--fluent-on-dark);
+  background-color: var(--fluent-purple-deep);
+  background-image: var(--fluent-gradient-hero), url("/banner_dark.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.intro:before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 86% 15%, rgba(0, 164, 239, 0.22), transparent 34%), rgba(20, 25, 72, 0.08);
+}
+
+.intro > * {
+  position: relative;
+  z-index: 1;
+}
+
+.intro .eyebrow {
+  color: var(--fluent-accent-light);
+}
+
+.intro h1 {
+  margin: 1rem 0 0;
+  font-size: clamp(3rem, 7vw, 5.9rem);
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 0.98;
+}
+
+.lede {
+  max-width: 47rem;
+  margin: 1.5rem 0 0;
+  color: var(--fluent-on-dark-muted);
+  font-size: 1.08rem;
+  line-height: 1.85rem;
+}
+
+.introNote {
+  border-left: 2px solid var(--fluent-accent-light);
+  padding: 0.5rem 0 0.5rem 1.2rem;
+
+  span {
+    color: var(--fluent-accent-light);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0.75rem 0 0;
+    color: var(--fluent-on-dark-muted);
+    font-size: 0.95rem;
+    line-height: 1.7rem;
+  }
+}
+
+.productLinks,
+.catalog,
+.repositoryCatalog {
+  background: var(--fluent-gradient-soft);
+}
+
+.catalog,
+.repositoryCatalog {
+  border-top: 1px solid var(--fluent-line);
+}
+
+.sectionHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.42fr);
+  gap: 2rem;
+  align-items: end;
+
+  h2 {
+    margin: 0.85rem 0 0;
+    color: var(--fluent-ink);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 740;
+    letter-spacing: 0;
+    line-height: 1.08;
+  }
+
+  > p {
+    margin: 0;
+    color: var(--fluent-muted);
+    font-size: 0.95rem;
+    line-height: 1.7rem;
+  }
+
+  > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    color: var(--fluent-blue);
+    font-size: 0.86rem;
+    font-weight: 800;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--fluent-purple);
+      outline: none;
+    }
+  }
+}
+
+.productTabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 2.5rem;
+}
+
+.productTab {
+  display: flex;
+  min-height: 8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-top: 2px solid rgba(91, 95, 199, 0.46);
+  padding: 1rem;
+  color: var(--fluent-ink);
+  background: var(--fluent-surface-soft);
+  backdrop-filter: blur(0.85rem) saturate(125%);
+  box-shadow: 0 1rem 2rem rgba(36, 36, 95, 0.07);
+  transition: transform 0.2s ease, background 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(225, 250, 247, 0.82);
+    outline: none;
+    transform: translateY(-0.2rem);
+  }
+
+  span {
+    color: var(--fluent-teal);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  strong {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.25;
+  }
+}
+
+.projectGroup {
+  margin-top: 4.5rem;
+}
+
+.groupHeading {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+  border-bottom: 1px solid var(--fluent-line);
+  padding-bottom: 1rem;
+
+  h3 {
+    margin: 0;
+    color: var(--fluent-ink);
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0;
+    color: var(--fluent-muted);
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.projectItem {
+  display: flex;
+  min-height: 20rem;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  padding: 1.25rem;
+  background: var(--fluent-surface-soft);
+  backdrop-filter: blur(0.85rem) saturate(125%);
+  box-shadow: 0 1rem 2rem rgba(36, 36, 95, 0.07);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba(3, 131, 135, 0.62);
+    transform: translateY(-0.2rem);
+  }
+
+  h4 {
+    margin: 0.65rem 0 0;
+    color: var(--fluent-ink);
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+}
+
+.projectRole {
+  margin: 0;
+  color: var(--fluent-blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.projectDescription {
+  margin: 1rem 0 0;
+  color: var(--fluent-muted);
+  font-size: 0.88rem;
+  line-height: 1.6rem;
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    border: 1px solid rgba(79, 91, 125, 0.2);
+    border-radius: 0.25rem;
+    padding: 0.42rem 0.55rem;
+    color: var(--fluent-blue);
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1.15;
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--fluent-blue);
+      background: rgba(233, 245, 255, 0.9);
+      outline: none;
+    }
+  }
+}
+
+.repositoryCatalog {
+  padding-top: 2rem;
+}
+
+.repositoryGroups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 2.5rem;
+}
+
+.repositoryGroup {
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  padding: 1.25rem;
+  background: var(--fluent-surface-soft);
+  backdrop-filter: blur(0.85rem) saturate(125%);
+  box-shadow: 0 1rem 2rem rgba(36, 36, 95, 0.07);
+
+  h3 {
+    margin: 0;
+    color: var(--fluent-ink);
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}
+
+.repositoryLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+
+  a {
+    display: inline-flex;
+    max-width: 100%;
+    border: 1px solid rgba(79, 91, 125, 0.2);
+    border-radius: 999px;
+    padding: 0.32rem 0.5rem;
+    color: #315a78;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--fluent-blue);
+      color: var(--fluent-purple);
+      background: rgba(233, 245, 255, 0.9);
+      outline: none;
+    }
+  }
+}
+
+@include media-ipad {
+  .intro,
+  .productLinks,
+  .catalog,
+  .repositoryCatalog {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+
+  .productTabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .projectGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .repositoryGroups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include media-mobile {
+  .intro,
+  .productLinks,
+  .catalog,
+  .repositoryCatalog {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .intro h1 {
+    font-size: 3.6rem;
+  }
+
+  .sectionHeader,
+  .groupHeading {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .sectionHeader > a {
+    justify-content: flex-start;
+  }
+
+  .productLinks,
+  .catalog {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .productTabs,
+  .projectGrid,
+  .repositoryGroups {
+    grid-template-columns: 1fr;
+  }
+
+  .projectGroup {
+    margin-top: 3.25rem;
+  }
+
+  .projectItem {
+    min-height: 16rem;
+  }
+}

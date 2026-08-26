@@ -3,7 +3,7 @@
 .footer {
   padding: 4.5rem 8rem 3rem;
   color: #ffffff;
-  background-color: #32145a;
+  background: var(--fluent-gradient);
 }
 
 .topArea {
@@ -25,7 +25,7 @@
 .summary {
   max-width: 24rem;
   margin: 1.4rem 0 0;
-  color: #f2eaff;
+  color: rgba(241, 246, 255, 0.82);
   font-size: 0.98rem;
   line-height: 1.7rem;
 }
@@ -42,7 +42,7 @@
 }
 
 .title {
-  color: #50e6ff;
+  color: #c7d4ff;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -63,7 +63,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-      color: #50e6ff;
+    color: #c7d4ff;
     }
   }
 }
@@ -72,10 +72,10 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
   margin-top: 3.5rem;
   padding-top: 1.5rem;
-  color: #f2eaff;
+  color: rgba(241, 246, 255, 0.78);
   font-size: 0.88rem;
 
   a {
@@ -83,7 +83,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-      color: #50e6ff;
+      color: #c7d4ff;
     }
   }
 }
