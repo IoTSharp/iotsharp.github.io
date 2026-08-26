@@ -10,11 +10,11 @@ const linkGroups = [
   {
     title: "核心项目",
     links: [
-      {label: "IoTSharp", link: "/IoTSharp/"},
-      {label: "SonnetDB", link: "/SonnetDB/"},
-      {label: "IoTCoWork", link: "/IoTCoWork/"},
-      {label: "IoTEdge", link: "/IoTEdge/"},
-      {label: "IoTEmBASIC", link: "/IoTEmBASIC/"}
+      {label: "IoTSharp", link: "/iotsharp/"},
+      {label: "SonnetDB", link: "/sonnetdb/"},
+      {label: "IoTCoWork", link: "/iotcowork/"},
+      {label: "IoTEdge", link: "/iotedge/"},
+      {label: "IoTEmBASIC", link: "/iotembasic/"}
     ]
   },
   {

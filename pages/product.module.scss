@@ -10,7 +10,7 @@
   color: var(--fluent-teal);
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -21,7 +21,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.3fr);
   gap: 4rem;
   align-items: end;
-  min-height: 36rem;
+  min-height: 39rem;
   padding: 5rem 9vw 5.5rem;
   color: var(--fluent-on-dark);
   background-color: var(--fluent-purple-deep);
@@ -45,7 +45,7 @@
 }
 
 .heroInner {
-  max-width: 52rem;
+  max-width: 55rem;
 }
 
 .backLink {
@@ -70,11 +70,12 @@
 
 .hero h1 {
   margin: 1rem 0 0;
+  overflow-wrap: anywhere;
   color: var(--fluent-on-dark);
-  font-size: clamp(4rem, 9vw, 8rem);
+  font-size: 5.75rem;
   font-weight: 760;
   letter-spacing: 0;
-  line-height: 0.9;
+  line-height: 0.92;
 }
 
 .role {
@@ -86,7 +87,7 @@
 }
 
 .description {
-  max-width: 45rem;
+  max-width: 49rem;
   margin: 1rem 0 0;
   color: var(--fluent-on-dark-muted);
   font-size: 1.03rem;
@@ -171,66 +172,320 @@
     color: rgba(239, 246, 255, 0.72);
     font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 
   strong {
     margin-top: 0.25rem;
     color: var(--fluent-accent-light);
-    font-size: clamp(4rem, 7vw, 7rem);
+    font-size: 6.5rem;
     font-weight: 650;
     line-height: 0.9;
   }
 }
 
-.content {
-  padding: 7rem 9vw;
+.audience,
+.capabilities,
+.getStarted {
+  padding: 6.5rem 9vw;
+}
+
+.audience,
+.getStarted {
   background: var(--fluent-gradient-soft);
 }
 
-.contentHeader {
-  max-width: 46rem;
+.capabilities {
+  border-top: 1px solid var(--fluent-line);
+  background: var(--fluent-canvas);
+}
+
+.sectionLead {
+  display: grid;
+  grid-template-columns: 3rem minmax(16rem, 0.8fr) minmax(18rem, 0.65fr);
+  gap: 1.5rem;
+  align-items: start;
 
   h2 {
-    margin: 0.9rem 0 0;
+    margin: 0.85rem 0 0;
     color: var(--fluent-ink);
-    font-size: clamp(2.15rem, 4vw, 3.5rem);
+    font-size: 3rem;
     font-weight: 740;
     letter-spacing: 0;
     line-height: 1.08;
   }
+
+  > p {
+    margin: 0;
+    color: var(--fluent-muted);
+    font-size: 0.98rem;
+    line-height: 1.75rem;
+  }
 }
 
-.highlightGrid {
+.sectionMark {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(3, 131, 135, 0.35);
+  color: var(--fluent-teal);
+}
+
+.audienceGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
   margin-top: 3.5rem;
+  border-top: 1px solid var(--fluent-line);
+  border-bottom: 1px solid var(--fluent-line);
+
+  article {
+    min-height: 15rem;
+    padding: 1.5rem 2rem 2rem;
+
+    & + article {
+      border-left: 1px solid var(--fluent-line);
+    }
+  }
+
+  span,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: var(--fluent-teal);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  h3 {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin-top: 0.8rem;
+    color: var(--fluent-muted);
+    font-size: 0.9rem;
+    line-height: 1.65rem;
+  }
 }
 
-.highlight {
-  min-height: 11rem;
-  border: 1px solid rgba(255, 255, 255, 0.74);
-  border-top: 2px solid rgba(3, 131, 135, 0.62);
-  padding: 1.1rem 1.2rem;
-  background: var(--fluent-surface-soft);
-  backdrop-filter: blur(0.85rem) saturate(125%);
-  box-shadow: 0 1rem 2rem rgba(36, 36, 95, 0.07);
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--fluent-line);
+
+  article {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1.25rem;
+    min-height: 10.5rem;
+    border-bottom: 1px solid var(--fluent-line);
+    padding: 1.5rem 1.75rem 1.5rem 0;
+
+    &:nth-child(even) {
+      border-left: 1px solid var(--fluent-line);
+      padding-right: 0;
+      padding-left: 1.75rem;
+    }
+  }
 
   span {
     color: #839793;
     font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
+  }
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.08rem;
+    line-height: 1.4;
   }
 
   p {
-    margin: 2rem 0 0;
-    color: var(--fluent-ink);
-    font-size: 1rem;
-    font-weight: 680;
+    margin-top: 0.7rem;
+    color: var(--fluent-muted);
+    font-size: 0.9rem;
+    line-height: 1.65rem;
+  }
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1fr);
+  gap: 7vw;
+  padding: 6.5rem 9vw;
+  color: var(--fluent-on-dark);
+  background: var(--fluent-purple-deep);
+}
+
+.portfolioIntro {
+  align-self: start;
+
+  .sectionMark {
+    border-color: rgba(139, 233, 217, 0.5);
+    color: var(--fluent-accent-light);
+  }
+
+  .eyebrow {
+    margin-top: 1.5rem;
+    color: var(--fluent-accent-light);
+  }
+
+  h2 {
+    margin: 0.85rem 0 0;
+    font-size: 2.7rem;
+    font-weight: 740;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+
+  > p:last-child {
+    margin: 1.5rem 0 0;
+    color: var(--fluent-on-dark-muted);
+    font-size: 0.98rem;
+    line-height: 1.8rem;
+  }
+}
+
+.workflow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1.25rem;
+    border-top: 1px solid rgba(245, 247, 255, 0.2);
+    padding: 1.5rem 0 1.75rem;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(245, 247, 255, 0.2);
+    }
+  }
+
+  span {
+    color: var(--fluent-accent-light);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    color: var(--fluent-on-dark);
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin-top: 0.65rem;
+    color: var(--fluent-on-dark-muted);
+    font-size: 0.88rem;
     line-height: 1.6rem;
+  }
+}
+
+.startGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 3.5rem;
+
+  article {
+    min-height: 13.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.74);
+    border-top: 2px solid rgba(3, 131, 135, 0.62);
+    padding: 1.25rem;
+    background: var(--fluent-surface-soft);
+    box-shadow: 0 1rem 2rem rgba(36, 36, 95, 0.07);
+  }
+
+  span,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: var(--fluent-teal);
+    font-size: 0.78rem;
+    font-weight: 850;
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin-top: 0.75rem;
+    color: var(--fluent-muted);
+    font-size: 0.88rem;
+    line-height: 1.6rem;
+  }
+}
+
+.resourceBar {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+  margin-top: 4rem;
+  border-top: 1px solid var(--fluent-line);
+  padding-top: 2rem;
+
+  h2 {
+    margin: 0.6rem 0 0;
+    font-size: 1.7rem;
+    line-height: 1.25;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    justify-content: flex-end;
+  }
+
+  a {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid rgba(79, 91, 125, 0.26);
+    border-radius: 0.3rem;
+    padding: 0.65rem 0.75rem;
+    color: var(--fluent-blue);
+    font-size: 0.8rem;
+    font-weight: 800;
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--fluent-teal);
+      color: var(--fluent-teal);
+      background: rgba(225, 250, 247, 0.7);
+      outline: none;
+    }
   }
 }
 
@@ -249,7 +504,7 @@
 
   h2 {
     margin: 0.8rem 0 0;
-    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    font-size: 2.25rem;
     font-weight: 730;
     letter-spacing: 0;
     line-height: 1.1;
@@ -279,7 +534,6 @@
     color: var(--fluent-on-dark);
     font-size: 0.82rem;
     font-weight: 800;
-    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 
     &:hover,
     &:focus-visible {
@@ -293,7 +547,10 @@
 
 @include media-ipad {
   .hero,
-  .content,
+  .audience,
+  .capabilities,
+  .portfolio,
+  .getStarted,
   .linkBand {
     padding-right: 3rem;
     padding-left: 3rem;
@@ -303,14 +560,29 @@
     grid-template-columns: minmax(0, 1fr) minmax(8rem, 0.24fr);
   }
 
-  .highlightGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .sectionLead {
+    grid-template-columns: 3rem minmax(0, 1fr);
+
+    > p {
+      grid-column: 2;
+    }
+  }
+
+  .portfolio {
+    gap: 4rem;
   }
 }
 
 @include media-mobile {
   .hero,
-  .content,
+  .audience,
+  .capabilities,
+  .portfolio,
+  .getStarted,
   .linkBand {
     padding-right: 1.25rem;
     padding-left: 1.25rem;
@@ -329,7 +601,8 @@
   }
 
   .hero h1 {
-    font-size: 4.25rem;
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .heroIndex {
@@ -345,23 +618,87 @@
     font-size: 4rem;
   }
 
-  .content {
+  .audience,
+  .capabilities,
+  .portfolio,
+  .getStarted {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
 
-  .highlightGrid {
+  .sectionLead,
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionLead {
+    gap: 1.1rem;
+
+    > p {
+      grid-column: auto;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .audienceGrid,
+  .capabilityGrid,
+  .startGrid {
     grid-template-columns: 1fr;
     margin-top: 2.5rem;
   }
 
-  .highlight {
-    min-height: 9rem;
+  .audienceGrid article {
+    min-height: 12rem;
+    padding-right: 0;
+    padding-left: 0;
+
+    & + article {
+      border-top: 1px solid var(--fluent-line);
+      border-left: 0;
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+  }
+
+  .capabilityGrid article,
+  .capabilityGrid article:nth-child(even) {
+    border-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .portfolio {
+    gap: 3rem;
+  }
+
+  .portfolioIntro h2 {
+    font-size: 2.25rem;
+  }
+
+  .startGrid article {
+    min-height: 11.5rem;
+  }
+
+  .resourceBar,
+  .linkBand {
+    grid-template-columns: 1fr;
+  }
+
+  .resourceBar nav {
+    justify-content: flex-start;
   }
 
   .linkBand {
-    grid-template-columns: 1fr;
     padding-top: 3.25rem;
     padding-bottom: 3.25rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
   }
 }

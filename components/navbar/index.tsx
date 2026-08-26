@@ -13,11 +13,11 @@ export interface INavBarProps {
 
 const navLinks = [
   {label: "首页", href: "/"},
-  {label: "IoTSharp", href: "/IoTSharp/"},
-  {label: "SonnetDB", href: "/SonnetDB/"},
-  {label: "IoTCoWork", href: "/IoTCoWork/"},
-  {label: "IoTEdge", href: "/IoTEdge/"},
-  {label: "IoTEmBASIC", href: "/IoTEmBASIC/"},
+  {label: "IoTSharp", href: "/iotsharp/"},
+  {label: "SonnetDB", href: "/sonnetdb/"},
+  {label: "IoTCoWork", href: "/iotcowork/"},
+  {label: "IoTEdge", href: "/iotedge/"},
+  {label: "IoTEmBASIC", href: "/iotembasic/"},
   {label: "更多项目", href: "/projects/"},
   {label: "企业服务", href: "https://iotsharp.net/console"}
 ];

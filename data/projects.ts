@@ -26,28 +26,28 @@ export const projectGroups: ProjectGroup[] = [
         name: "IoTSharp",
         role: "开源物联网主平台",
         description: "设备注册、心跳、配置、命令、固件、遥测、属性、事件、告警、规则引擎和开放 API。",
-        page: "/IoTSharp/",
+        page: "/iotsharp/",
         repo: github("IoTSharp"),
         gitee: gitee("IoTSharp"),
-        productSlug: "IoTSharp"
+        productSlug: "iotsharp"
       },
       {
         name: "IoTCoWork",
         role: "Blazor Hybrid 本地工作台",
         description: "面向工程建模、调试、Copilot 协作、脚本设计和产物生成的本地开发工作台。",
-        page: "/IoTCoWork/",
+        page: "/iotcowork/",
         repo: github("IoTCoWork"),
         gitee: gitee("IoTCoWork"),
-        productSlug: "IoTCoWork"
+        productSlug: "iotcowork"
       },
       {
         name: "SonnetDB",
         role: "C# 时序数据库",
         description: "面向高频遥测、指标写入、SQL 查询和边缘部署的 .NET 10 时序数据库。",
-        page: "/SonnetDB/",
+        page: "/sonnetdb/",
         repo: github("SonnetDB"),
         gitee: gitee("SonnetDB"),
-        productSlug: "SonnetDB"
+        productSlug: "sonnetdb"
       },
       {
         name: "DotVector",
@@ -67,19 +67,19 @@ export const projectGroups: ProjectGroup[] = [
         name: "IoTEdge",
         role: "C# AOT 边缘基座",
         description: "工业 IoT 连接网关、采集循环、上报通道和 BasicRuntime C# 宿主。",
-        page: "/IoTEdge/",
+        page: "/iotedge/",
         repo: github("IoTEdge"),
         gitee: gitee("IoTEdge"),
-        productSlug: "IoTEdge"
+        productSlug: "iotedge"
       },
       {
         name: "IoTEmBASIC",
         role: "嵌入式 BASIC/C 运行时",
         description: "覆盖 STM32、RTOS、bare-metal 和低资源 Linux 的嵌入式 BASIC/C 运行时。",
-        page: "/IoTEmBASIC/",
+        page: "/iotembasic/",
         repo: github("IoTEmbedded"),
         gitee: gitee("IoTEmbedded"),
-        productSlug: "IoTEmBASIC"
+        productSlug: "iotembasic"
       },
       {
         name: "IoTSharp.Edge.RT-Thread",
