@@ -60,6 +60,15 @@ const ProductPage: NextPage<ProductPageProps> = ({product}) => {
                 <ExternalLink size={17} aria-hidden="true"/> Gitee
               </a>
             </div>
+            {product.demo && (
+              <section className={styles.demoAccess} aria-label={`${product.name} 在线演示`}>
+                <h2>在线演示</h2>
+                <a href={product.demo.url} target="_blank" rel="noreferrer">打开 {product.name} 演示</a>
+                <p>账号：<code>{product.demo.username}</code><br/>密码：<code>{product.demo.password}</code></p>
+                <p>仅公共演示账号的用户名和密码每半小时恢复一次。</p>
+                <p><strong>正常注册账号可用于测试服务，账号、密码和业务数据均不参与演示重置，长期保留。</strong></p>
+              </section>
+            )}
           </div>
           <div className={styles.heroIndex} aria-hidden="true">
             <span>IoTSharp portfolio</span>

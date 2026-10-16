@@ -26,6 +26,7 @@ export interface Product {
   github: string;
   gitee: string;
   tags: string[];
+  demo?: {url: string; username: string; password: string};
 }
 
 export const products: Product[] = [
@@ -65,6 +66,7 @@ export const products: Product[] = [
     docs: "/docs/iotsharp/",
     websiteLabel: "在线演示",
     website: "https://iotsharp.online/",
+    demo: {url: "https://iotsharp.online/#/login", username: "demo@iotsharp.online", password: "P@ssw0rd"},
     github: "https://github.com/IoTSharp/IoTSharp",
     gitee: "https://gitee.com/IoTSharp/IoTSharp",
     tags: ["设备接入", "数字孪生", "规则链"]
@@ -105,6 +107,7 @@ export const products: Product[] = [
     docs: "/docs/sonnetdb/",
     websiteLabel: "产品官网",
     website: "https://www.sonnetdb.com/",
+    demo: {url: "https://iotsharp.online/sonnetdb/admin/login", username: "demo@iotsharp.online", password: "P@ssw0rd"},
     github: "https://github.com/IoTSharp/SonnetDB",
     gitee: "https://gitee.com/IoTSharp/SonnetDB",
     tags: ["时序", "多模型", ".NET 10"]

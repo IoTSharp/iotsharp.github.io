@@ -5,6 +5,22 @@
   background: var(--fluent-canvas);
 }
 
+.demoAccess {
+  max-width: 42rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(245, 247, 255, 0.38);
+  border-radius: 0.3rem;
+  background: rgba(20, 25, 72, 0.35);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+
+  h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+  p { margin: 0.5rem 0 0; }
+  a { color: var(--fluent-accent-light); text-decoration: underline; text-underline-offset: 3px; }
+}
+
 .eyebrow {
   margin: 0;
   color: var(--fluent-teal);
